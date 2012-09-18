@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} muhata.com | Малки обяви {% endblock %}
+
+{% block body %}
+
+<div id = "tagList-wrapper">
+    <ul id = "tagList"></ul>
+</div>
+
+<input type="text" name = "tags" id = "search-box"  autocomplete = "off" value = "Търси по тагове"/>
+<input type="button" value="Търси" id = "search-button" />
+
+<form action = "/search-by-tags/" id = "search-by-tags" method = "POST">
+    {% csrf_token %}
+    <input type="hidden" name="tags" value="" id = "hidden-field"/>
+</form>
+
+<ul id = "suggestionsList"></ul>
+
+
+{% endblock %}

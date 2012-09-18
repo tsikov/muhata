@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{% block title %} muhata.com {% endblock %}</title>
+	<link href="/static/style2.css" rel="stylesheet" type="text/css" />
+	<script src="/static/jquery.js" type="text/javascript"></script>
+	<script src="/static/js2.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<div id = "logo-menu">
+	<a href = "/"><div id = "logo"></div></a>
+{% if user.is_authenticated %}
+    <div id = "menu">
+		Здравейте, {{ user.username }}. |
+		<a href = "/dobavi-obqva/" id = "add-ad">Добави обява</a> |
+        <a href = "/izhod/">изход</a>
+    </div>
+{% else %}
+    <div id = "menu">
+    	<a id = "login-register-link">вход</a> |
+    	<a href = "/dobavi-obqva/" id = "add-ad">Добави обява</a>
+	</div>
+
+	<div id = "login-register">
+    	<div id = "login">
+        	<br /><h2>вход:</h2><br />
+        	<form action="/login-user/" method="post">
+            	{% csrf_token %}
+            	{{ auf.username }}
+            	{{ auf.password }}
+				<br />
+            	<input type="submit" value="Вход" id = "submit_login" />
+        	</form>
+    	</div>
+    	<div id = "register">
+        	<br /><h2>регистрирай се:</h2><br />
+        	<form method = "POST" action = "/register-user/">
+            	{% csrf_token %}
+            	{{ acf.username }}
+            	{{ acf.password }}
+            	{{ acf.email }}
+				<br />
+            	<input type = "submit" value = "Регистрирай се" id = "submit_register" />
+        	</form>
+    	</div>
+	</div>
+
+	<div id = "login-register-wrapper"></div>
+{% endif %}
+
+</div>
+
+{% if flash_message %}
+    <div id = "flash-message">
+        {{ flash_message }}
+    </div>
+{% endif %}
+
+{% block body %}{% endblock %}
+
+<div id = "footer">
+    Created by <a href = "http://tsikov.com">Petko Tsikov</a><br />
+    with the <a href = "http://djangoproject.com">Django Framework</a>.
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿{% extends 'base.html' %}
+
+{% block title %} muhata.com | {{ ad.title }} {% endblock %}
+
+{% block body %}
+
+<div id = "ad-and-comments-wrapper">
+
+	<div id = "ad-container">
+
+		<h2 id = "ad-title-big">{{ ad.title }}</h2>
+
+		{% if ad.has_pic %}
+			<img src="{{ STATIC_URL }}user_data/{{ ad.id }}.jpg" height = "{{ ad.picture_height }}"
+			width = "{{ ad.picture_width }}" id = "ad-picture-big"/>
+		{% endif %}
+
+		<div id = "ad-text">
+			{{ ad.content|linebreaksbr }} <br />
+		</div>
+
+	</div>
+
+</div>
+{% endblock %}

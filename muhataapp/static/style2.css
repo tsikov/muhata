@@ -1,0 +1,341 @@
+/* ALL PAGES */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #eee;
+}
+
+a {
+	color: blue;
+	text-decoration: none;
+}
+a:hover {
+	color: purple;
+}
+
+/* BASE styling */
+
+#logo {
+	float: left;
+	background-image: url("images/logo.png");
+	width:100px;
+	height: 25px;
+	margin: 5px;
+}
+
+#logo-menu {
+	background: #ccc;
+	width: 100%;
+	height: 40px;
+}
+
+#flash-message {
+    text-align: center;
+    background: #333;
+    color: white;
+}
+
+#menu {
+	float: right;
+	padding: 5px;
+	margin: 5px;
+    text-align: right;
+	font-family: Verdana;
+	font-size: 15px;
+}
+
+#login-register-link:hover, #add-ad:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+
+#login_username_field, #login_password_field, #register_username_field, #register_password_field, #register_email_field {
+	width: 238px;
+	margin: 5px;
+	padding: 5px;
+	font-size: 20px;
+	color: #aaa;
+}
+
+#submit_register, #submit_login {
+	padding: 5px;
+	margin: 5px;
+	font-size: 20px;
+}
+
+/* HOMEPAGE styling */
+
+#tagList-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 488px;
+    text-align: center;
+    margin-left: -250px;
+}
+
+#search-box {
+    width: 400px;
+    margin-left: -250px;
+    border: solid thin #ccc;
+    padding: 5px;
+   	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	color: #aaa;
+}
+
+#search-button {
+    width: 90px;
+    margin-left: 150px;
+}
+
+#search-box, #search-button {
+    margin-top: -25px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    font-size:24px;
+}
+
+#tagList li {
+    margin: 7px;
+    padding: 7px;
+    border: solid thin;
+    display: inline-block;
+}
+
+#suggestionsList {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: 26px;
+    margin-left: -249px;
+    list-style: none;
+    background: #fff;
+    width: 398px;
+}
+
+#suggestionsList li {
+    border-bottom: dotted thin;
+}
+
+.selected-tags {
+    background: #e0eaf1;
+    font-family: Verdana;
+}
+
+.selected-tags:hover {
+    background: #3e6d8e;
+}
+
+.delete-tag {
+    height:14px;
+    width:14px;
+	color: white;
+	background: #ccc;
+}
+
+.delete-tag:hover {
+    background: #790000;
+}
+
+.hover {
+    background: #ccc;
+}
+
+#login-register-wrapper {
+	background: #000;
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	opacity: 0.8;
+}
+
+#login-register {
+	background: white;
+	border: solid thick;
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+    margin-top: -125px;
+    margin-left: -300px;
+	width: 600px;
+    height: 250px;
+	text-align: left;
+	z-index: 4;
+}
+
+#login, #register {
+    float: left;
+    width: 296px;
+    font-family: Verdana;
+    font-size: 10px;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+#register {
+    float: right;
+}
+
+#footer {
+    font-size: 10px;
+    font-family: Arial;
+    right: 5px;
+    bottom: 5px;
+    position: fixed;
+    color: #888;
+    text-align: right;
+}
+
+/* The following classes are needed to style the ad listings */
+
+#ads-results {
+	width: 500px;
+	margin: 20px auto 0px auto;
+}
+
+.list-ads-results {
+    list-style: none;
+	border-bottom: solid thin;
+	height: 120px;
+	padding: 5px;
+	position: relative;
+    display:block;
+	max-height:120px;
+	overflow: hidden;
+}
+
+.ad-picture {
+	float: left;
+	margin-right: 5px;
+	border: solid thin black;
+}
+
+.ad-info {
+
+}
+
+.ad-report {
+    position: absolute;
+	bottom: 0;
+	right: 5px;
+	font-size: 13px;
+	font-family: Arial;
+	z-index: 2;
+	background: #ccc;
+	cursor: pointer;
+	cursor: hand;
+}
+
+.ad-title {
+	font-size: 20px;
+}
+
+.ad-date {
+	font-size: 10px;
+	font-family: Arial;
+}
+
+.ad-more-content {
+	font-size: 10px;
+	font-family: Arial;
+}
+
+/* Display ad page */
+
+#ad-and-comments-wrapper {
+}
+
+#ad-container {
+	width: 500px;
+	margin: auto;
+	position: relative;
+	text-align:center;
+}
+
+#ad-and-adding-container {
+	width: 500px;
+	margin: auto;
+	position: relative;
+}
+
+#ad-picture-big {
+ 	margin:auto;
+}
+
+#ad-text {
+	margin-top:10px;
+	text-align: left;
+}
+
+#ad-title-big {
+	margin: 20px 0px 10px 0px;
+	font-family: Arial;
+}
+
+/* Display Add Ad Page*/
+
+.list-ads-added {
+	margin: 10px 0px 10px 20px;
+}
+
+.section {
+    font-family: Arial;
+    font-size: 20px;
+	margin: 10px;
+}
+
+#id_title, #id_content, #id_tags {
+	color: #aaa;
+	font-size: 20px;
+	font-family: Georgia;
+	margin: 5px;
+	width: 500px;
+}
+
+#submit_ad {
+	font-size: 20px;
+	font-family: Georgia;
+	margin: 5px;
+	padding: 5px;
+}
+
+.ad-link {
+	font-size: 20px;
+}
+
+.ad-command {
+	font-size: 10px;
+	font-family: Arial;
+	border: solid thin;
+	color: green;
+	padding: 1px;
+}
+
+/*  EDIT  */
+
+#ad-container-edit {
+	width: 500px;
+	margin: auto;
+	position: relative;
+	text-align:left;
+}
+
+#pic-container {
+
+}

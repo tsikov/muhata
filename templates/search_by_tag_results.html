@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} muhata.com {% endblock %}
+
+{% block body %}
+
+<div id = "wrapper-ads-results">
+
+	<ul id = "ads-results">
+	{% for a in results %}
+    	<li class = "list-ads-results">
+            {% if a.has_pic %}
+            <a href = "/obqva/{{ a.id }}/">
+				<img src = "/static/user_data/{{a.id}}_thumb.jpg" class = "ad-picture" />
+			</a>
+            {% endif %}
+			<div id = "ad-info">
+            	<a href = "/obqva/{{ a.id }}/" class = "ad-title">{{ a.title }}</a> <span class = "ad-date">{{ a.date|date:"N j, Y" }}</span><br />
+            	{{ a.content|truncatechars:200 }} <a href = "/obqva/{{ a.id }}/" class = "ad-more-content">(още)</a>
+			</div>
+			<span class = "ad-report" id = "{{ a.id }}" title = "Докладвай обявата за ксенофобия, хомофобия, расизъм, сексизъм и пр.">докладвай</span>
+    	</li>
+
+	{% endfor %}
+	</ul>
+
+</div> <!-- end of wrapper-ads-results -->
+
+<!--
+<ul>
+{% for t in tags %}
+    <li><a href = "/tag/{{ t.id }}/">{{ t.name }}</a> ({{ t.count }})</li>
+{% endfor %}
+</ul>
+-->
+{% endblock %}

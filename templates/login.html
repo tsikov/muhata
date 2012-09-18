@@ -1,0 +1,18 @@
+﻿{% extends 'base.html' %}
+
+{% block title %} muhata.com | Начало {% endblock %}
+
+{% block body %}
+
+<h1>Вход</h1>
+
+<form action="/login-user/" method="post">
+
+{% csrf_token %}
+
+{{ auf.as_p }}
+
+<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

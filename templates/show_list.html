@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} tsikov.com | Blog {% endblock %}
+
+{% block body %}
+
+{{ error }}
+
+<h1>{{ listname }}</h1>
+
+<ul>
+{% for a in articles %}
+    <li><a href = "/a/{{ a.id }}/">{{ a.title }}</a> ({{ a.date }})</li>
+{% endfor %}
+</ul>
+
+<h2>Categories:</h2>
+
+<ul>
+{% for c in categories %}
+    <li><a href = "/c/{{ c.id }}/">{{ c.name }}</a> ({{ c.number_of_entries }})</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

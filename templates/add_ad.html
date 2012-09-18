@@ -1,0 +1,39 @@
+﻿{% extends 'base.html' %}
+
+{% block title %} muhata.com | Добави обява {% endblock %}
+
+{% block body %}
+
+<div id = "ads-and-adding-wrapper">
+
+	<div id = "ad-and-adding-container">
+
+		<h2 class = "section" >вашите обяви:</h2>
+
+		{% if ads %}
+   			<ul>
+    		{% for ad in ads %}
+        		<li class = "list-ads-added"><a href = "/obqva/{{ ad.id }}/" class = "ad-link">{{ ad.title }}</a>
+				<a href= "/obqva/{{ad.id}}/redaktirai/" class = "ad-command">редактирай</a>
+				<a href = "/delete-ad/{{ad.id}}/" class = "ad-command">изтрий</a></li>
+    		{% endfor %}
+    		</ul>
+		{% else %}
+    		нямате обяви
+		{% endif %}
+
+		<h2 class = "section" >добави обява:</h2>
+
+        {{ adf.errors }}
+		{{ adf.non_field_errors }}
+
+		<form action="/add-ad-to-database/" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+			{{ adf.as_p }}
+			<input type="text" name = "tags" id = "id_tags" value = "тагове"/><br />
+			<input type="submit" value="Публикувай" id = "submit_ad"/>
+		</form>
+	</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eee;
+}
+
+#add-ad {
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: 210px;
+    margin-top: -20px;
+    font-family: Verdana;
+    font-size: 14px;
+}
+
+#search-box, #search-button {
+    height: 50px;
+    font-size:24px;
+    left: 50%;
+    top: 50%;
+    position:absolute;
+}
+
+#search-box {
+    margin-left: -200px;
+    width: 400px;
+    border: solid thin #ccc;
+    padding: 5px;
+   	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#search-button {
+    margin-left: 208px;
+    width: 90px;
+}
+
+#suggestionsList {
+    display: none;
+    width: 398px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: 50px;
+    background: #fff;
+    border: solid thin #ccc;
+    font-family: Verdana;
+    font-size: 14px;
+    list-style: none;
+}
+
+#suggestions-list {
+    list-style: none;
+}
+
+.hover {
+    background: #ccc;
+}
+
+#footer {
+    font-size: 10px;
+    font-family: Arial;
+    right: 5px;
+    bottom: 5px;
+    position: absolute;
+    color: #888;
+    text-align: right;
+}
+
+#tagList {
+/*    margin-top: -30px;
+    left: 50%;
+    top: 50%; */
+}
+
+#tagList li {
+    margin: 5px;
+    border: solid thin;
+    padding: 3px;
+    display: inline-block;
+}
+
+#tag-container {
+    width: 400px;
+    border: dotted thin;
+    position: relative;
+    margin-top: -30px;
+    margin-left: -200px;
+    left: 50%;
+    top: 50%;
+}

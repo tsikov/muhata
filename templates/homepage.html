@@ -1,0 +1,22 @@
+﻿{% extends 'base.html' %}
+
+{% block title %} muhata.com | Малки обяви {% endblock %}
+
+{% block body %}
+
+<div id = "tag-container">
+
+    <ul id = "tagList"></ul>
+
+</div>
+
+<a href= "/dobavi-obqva/" id = "add-ad">Добави обява</a>
+
+<input type="text" name = "tags" id = "search-box"  autocomplete = "off" />
+
+<input type="button" value="Търси" id = "search-button" />
+
+<ul id = "suggestionsList"></ul>
+
+
+{% endblock %}

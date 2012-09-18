@@ -1,0 +1,32 @@
+﻿{% extends 'base.html' %}
+
+{% block title %} tsikov.com | Register user {% endblock %}
+
+{% block body %}
+
+<h1>Register:</h1>
+
+<form method = "POST" action = "/register-user/">
+	{% csrf_token %}
+
+    <div class="fieldWrapper">
+    <label for="id_username">Потребителско име:</label>
+        {{ acf.username.errors }}
+        {{ acf.username }}
+    </div>
+    <div class="fieldWrapper">
+        <label for="id_password">Парола</label>
+        {{ acf.password.errors }}
+        {{ acf.password }}
+    </div>
+    <div class="fieldWrapper">
+        <label for="id_email">E-mail</label>
+        {{ acf.email.errors }}
+        {{ acf.email }}
+    </div>
+
+	<input type = "submit">
+
+</form>
+
+{% endblock %}

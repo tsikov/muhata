@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} muhata.com | Редакрирай обява {% endblock %}
+
+{% block body %}
+
+<div id = "ad-and-comments-wrapper">
+
+	<div id = "ad-container-edit">
+		<h2>редактирай обява:</h2>
+		<form action="/change-to-database/{{ ad.id }}/" method="post" enctype="multipart/form-data">{% csrf_token %}
+            {{ adf.title }}
+
+			<div id = "pic-container">
+			{% if ad.has_pic %}
+				<img src="{{ STATIC_URL }}user_data/{{ ad.id }}.jpg" height = "{{ ad.picture_height }}"
+				width = "{{ ad.picture_width }}" id = "ad-picture-big"/>
+				<input type="button" value = "Изтрий снимка" id = "delete-pic" name = "{{ ad.id }}" />
+			{% else %}
+				<input type="file" name="picture" id="id_picture" />
+			{% endif %}
+			</div>
+
+            {{ adf.content }}
+ 			{{adf.adult_content.label}} {{ adf.adult_content }}
+			<input type="text" name = "tags" id = "id_tags" value = "{{ tags }}"/><br />
+			<input type="submit" value="Редактирай" id = "submit_ad"/>
+		</form>
+	</div>
+
+</div>
+{% endblock %}
